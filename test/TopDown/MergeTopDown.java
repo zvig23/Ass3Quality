@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
-
 public class MergeTopDown {
 
     @Before
@@ -14,26 +13,20 @@ public class MergeTopDown {
 
     }
 
-    public static int[] sortArrayStub(int [] arr){
-//        return new int[]{1, 2, 3, 4};
-        Arrays.sort(arr);
-        return arr;
-    }
-
     // A copy of merge from Program, where every call to another function was replaced by stubs,
     // namely: sortArray got replaced by sortArrayStub
     // Merges two arrays "ar1" and "ar2" into one sorted array and returns it
     public static int[] MergeTest(int[] ar1, int[] ar2) {
         if (ar1==null && ar2==null) return null;
-        if (ar1==null) return sortArrayStub(ar2);
-        if (ar2==null) return sortArrayStub(ar1);
+        if (ar1==null) return Stubs.sortArrayStub(ar2);
+        if (ar2==null) return Stubs.sortArrayStub(ar1);
         int[] res = new int[ar1.length+ar2.length];
         int i = 0;
         for(int j=0; j<ar1.length; j++)
             res[i++] = ar1[j];
         for(int j=0; j<ar2.length; j++)
             res[i++] = ar2[j];
-        return sortArrayStub(res);
+        return Stubs.sortArrayStub(res);
     }
 
     @Test
