@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 public class Stubs {
+    //<editor-fold desc="Atomic Stubs">
     public static int[] sortArrayStub(int [] arr){
 //        return new int[]{1, 2, 3, 4};
         Arrays.sort(arr);
@@ -47,4 +48,55 @@ public class Stubs {
 //        return 10;
         return arr.length;
     }
+    //</editor-fold>
+
+    //<editor-fold desc="Merge Complex Stubs">
+    public static int[] sortArray_AllStubs(int [] arr){
+        if (arr == null) return null;
+        int[] res = copyArrStub(arr);
+        for(int i=0; i<sizeStub(arr); i++)
+            for (int j=0; j<sizeStub(arr)-i-1; j++)
+                if (res[j]>res[j+1]) {
+                    int temp = res[j];
+                    res[j] = res[j+1];
+                    res[j+1] = temp;
+                }
+        return res;
+    }
+
+    public static int[] copyArr_SizeStub(int[] arr){
+        if (arr == null) return null;
+        int[] res = new int[sizeStub(arr)];
+        for(int i=0; i<sizeStub(arr); i++)
+            res[i] = arr[0];
+        return res;
+    }
+
+    public static int[] sortArray_SizeStub(int [] arr){
+        if (arr == null) return null;
+        int[] res = copyArr_SizeStub(arr);
+        for(int i=0; i<sizeStub(arr); i++)
+            for (int j=0; j<sizeStub(arr)-i-1; j++)
+                if (res[j]>res[j+1]) {
+                    int temp = res[j];
+                    res[j] = res[j+1];
+                    res[j+1] = temp;
+                }
+        return res;
+    }
+
+    public static int[] sortArray_NoStubs(int[] arr){
+        if (arr == null) return null;
+        int[] res = copyArr_SizeStub(arr);
+        for(int i=0; i<Program.size(arr); i++)
+            for (int j=0; j<Program.size(arr)-i-1; j++)
+                if (res[j]>res[j+1]) {
+                    int temp = res[j];
+                    res[j] = res[j+1];
+                    res[j+1] = temp;
+                }
+        return res;
+    }
+    //</editor-fold>
+
 }
