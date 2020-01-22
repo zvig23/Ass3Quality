@@ -117,4 +117,11 @@ public class Stubs {
         return arr[ind];
     }
     //</editor-fold>
+
+    //<editor-fold desc="SumMinMax Complex Stubs">
+    public static int minValue_maxValueIndexStub(int[] arr) {
+        int ind = maxValueIndexStub(arr);
+        return arr[ind];
+    }
+    //</editor-fold>
 }
