@@ -7,8 +7,10 @@ import static org.junit.Assert.assertEquals;
 
 public class SumMinMaxTopDown {
 
-    private static int[] arr;
-    private static int expectedSum;
+    private static int[] arr1;
+    private static int expectedSum1;
+    private static int[] arr2;
+    private static int expectedSum2;
 
     @BeforeClass
     public static void init(){
@@ -17,8 +19,10 @@ public class SumMinMaxTopDown {
 
     @Before
     public void initTest(){
-        arr = new int[]{7, 4, 1, 2, 3, 9, 15};
-        expectedSum = 16;//1 + 15
+        arr1 = new int[]{7, 4, 1, 2, 3, 9, 15};
+        expectedSum1 = 16;//1 + 15
+        arr2 = new int[]{7, 4, 5, 2, 3, 9, 6};
+        expectedSum2 = 11;//2 + 9
     }
 
     //In this test, every call to a lower-level method from sumMinMax is a stub.
@@ -26,8 +30,8 @@ public class SumMinMaxTopDown {
 
     @Test
     public void SumMinMaxTopDownTest(){
-        int actualSum = SumMinMaxTest(arr);
-        assertEquals(expectedSum, actualSum);
+        int actualSum = SumMinMaxTest(arr1);
+        assertEquals(expectedSum1, actualSum);
     }
 
     //In this test, minValue's minValueIndex and maxValue are stubs.
@@ -35,8 +39,8 @@ public class SumMinMaxTopDown {
 
     @Test
     public void SumMinMaxTopDownTest2(){
-        int actualSum = SumMinMaxTest2(arr);
-        assertEquals(expectedSum, actualSum);
+        int actualSum = SumMinMaxTest2(arr1);
+        assertEquals(expectedSum1, actualSum);
     }
 
     //In this test, minValue's maxValueIndex and maxValue's maxValueIndex are stubs.
@@ -44,8 +48,8 @@ public class SumMinMaxTopDown {
 
     @Test
     public void SumMinMaxTopDownTest3(){
-        int actualSum = SumMinMaxTest3(arr);
-        assertEquals(expectedSum, actualSum);
+        int actualSum = SumMinMaxTest3(arr1);
+        assertEquals(expectedSum1, actualSum);
     }
 
     //In this test, maxValue's maxValueIndex is a stub.
@@ -53,15 +57,46 @@ public class SumMinMaxTopDown {
 
     @Test
     public void SumMinMaxTopDownTest4(){
-        int actualSum = SumMinMaxTest4(arr);
-        assertEquals(expectedSum, actualSum);
+        int actualSum = SumMinMaxTest4(arr1);
+        assertEquals(expectedSum1, actualSum);
     }
 
     // In this test, there are no stubs.
     @Test
     public void SumMinMaxTopDownTest5(){
-        int actualSum = Program.sumMinMax(arr);
-        assertEquals(expectedSum, actualSum);
+        int actualSum = Program.sumMinMax(arr1);
+        assertEquals(expectedSum1, actualSum);
+    }
+
+    @Test
+    public void SumMinMaxTopDownTest6(){
+        int actualSum = SumMinMaxTest(arr2);
+        assertEquals(expectedSum2, actualSum);
+    }
+
+    @Test
+    public void SumMinMaxTopDownTest7(){
+        int actualSum = SumMinMaxTest2(arr2);
+        assertEquals(expectedSum2, actualSum);
+    }
+
+    @Test
+    public void SumMinMaxTopDownTest8(){
+        int actualSum = SumMinMaxTest3(arr2);
+        assertEquals(expectedSum2, actualSum);
+    }
+
+    @Test
+    public void SumMinMaxTopDownTest9(){
+        int actualSum = SumMinMaxTest4(arr2);
+        assertEquals(expectedSum2, actualSum);
+    }
+
+    // In this test, there are no stubs.
+    @Test
+    public void SumMinMaxTopDownTest10(){
+        int actualSum = Program.sumMinMax(arr2);
+        assertEquals(expectedSum2, actualSum);
     }
 
     @AfterClass
