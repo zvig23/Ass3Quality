@@ -91,15 +91,15 @@ public class MergeTopDown {
     // However, copyArr depends on size(), so calls to size inside copyArr are stubs for now.
     public static int[] MergeTest4(int[] ar1, int[] ar2){
         if (ar1==null && ar2==null) return null;
-        if (ar1==null) return Stubs.sortArray_SizeStub(ar2);
-        if (ar2==null) return Stubs.sortArray_SizeStub(ar1);
+        if (ar1==null) return Stubs.sortArray_NoStubs(ar2);
+        if (ar2==null) return Stubs.sortArray_NoStubs(ar1);
         int[] res = new int[ar1.length+ar2.length];
         int i = 0;
         for(int j=0; j<ar1.length; j++)
             res[i++] = ar1[j];
         for(int j=0; j<ar2.length; j++)
             res[i++] = ar2[j];
-        return Stubs.sortArray_SizeStub(res);
+        return Stubs.sortArray_NoStubs(res);
     }
 
     @Test
