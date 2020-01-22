@@ -100,4 +100,14 @@ public class Stubs {
     }
     //</editor-fold>
 
+    //<editor-fold desc="IsSorted Complex Stubs">
+    public static boolean equalArrays_SizeStub(int[] arr1, int[] arr2) {
+        if (arr1==null && arr2 == null) return true;
+        if (arr1==null || arr2 == null) return false;
+        if (sizeStub(arr1)!=sizeStub(arr2)) return false;
+        for (int i=0; i<sizeStub(arr1); i++)
+            if (arr1[i]==arr2[i]) return true;
+        return false;
+    }
+    //</editor-fold>
 }
