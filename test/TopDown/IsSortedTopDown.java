@@ -3,8 +3,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.PrintStream;
-
 import static org.junit.Assert.*;
 
 public class IsSortedTopDown {

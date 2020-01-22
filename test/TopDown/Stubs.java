@@ -110,4 +110,11 @@ public class Stubs {
         return false;
     }
     //</editor-fold>
+
+    //<editor-fold desc="SwapMinMax Complex Stubs">
+    public static int maxValue_maxValueIndexStub(int[] arr) {
+        int ind = maxValueIndexStub(arr);
+        return arr[ind];
+    }
+    //</editor-fold>
 }
