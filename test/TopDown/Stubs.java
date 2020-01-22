@@ -4,8 +4,9 @@ public class Stubs {
     //<editor-fold desc="Atomic Stubs">
     public static int[] sortArrayStub(int [] arr){
 //        return new int[]{1, 2, 3, 4};
-        Arrays.sort(arr);
-        return arr;
+        int[] sorted = Arrays.copyOf(arr,arr.length);
+        Arrays.sort(sorted);
+        return sorted;
     }
 
     public static boolean equalArraysStub(int[] arr1, int[] arr2) {

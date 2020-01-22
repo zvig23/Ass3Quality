@@ -4,6 +4,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -29,6 +30,7 @@ public class PrintSortedTopDown {
     @Before
     public void initTest(){
         arr = new int[]{5, 2, 13, 8, 9, 3, 7};
+        ourOut.reset();
     }
 
     //In this test, every call to a lower-level method from printSorted is a stub.
